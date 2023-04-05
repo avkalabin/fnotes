@@ -21,7 +21,7 @@ public class LoginFront implements FtBase {
 
         String username = JOptionPane.showInputDialog("Username");
         String password = JOptionPane.showInputDialog("Password");
-        User user = null;
+        User user;
 
         try {
             user = userRepository.findAll()

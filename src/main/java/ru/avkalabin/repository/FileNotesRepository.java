@@ -1,7 +1,6 @@
 package ru.avkalabin.repository;
 
 import com.opencsv.CSVReader;
-import ru.avkalabin.model.User;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
