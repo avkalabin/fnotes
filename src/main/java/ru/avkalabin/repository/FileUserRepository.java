@@ -25,7 +25,7 @@ public class FileUserRepository implements UserRepository {
             users = reader.readAll();
         }
         return users.stream()
-                .map(array -> new User(array[1], array[2]))
+                .map(array -> new User(array[0], array[1], array[2], array[3]))
                 .toList();
     }
 }

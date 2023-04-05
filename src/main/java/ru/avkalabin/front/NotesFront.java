@@ -16,12 +16,12 @@ public class NotesFront implements FtBase {
 
     @Override
     public void start(UserSession userSession) throws Exception {
-        List<String> notesContent = notesRepository.getNotesContent(userSession.getUser().getUsername());
+        List<String> notesContent = notesRepository.getNotesContent(userSession.getUser().getUsername(), userSession.getUser().getRelativeId());
 
         JOptionPane.showMessageDialog(null, notesContent.toString(), "Old notes: ", JOptionPane.INFORMATION_MESSAGE);
 
 
         String note = JOptionPane.showInputDialog("Your note:");
-        notesRepository.saveNote(note, userSession.getUser().getUsername());
+        notesRepository.saveNote(note, userSession.getUser().getUsername(), userSession.getUser().getId());
     }
 }

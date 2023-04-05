@@ -5,7 +5,6 @@ import ru.avkalabin.repository.UserRepository;
 import ru.avkalabin.session.UserSession;
 
 import javax.swing.*;
-import java.util.List;
 import java.util.NoSuchElementException;
 
 public class LoginFront implements FtBase {
@@ -30,12 +29,10 @@ public class LoginFront implements FtBase {
                     .filter(u -> u.isSameUser(username, password))
                     .findFirst()
                     .orElseThrow();
+            userSession.setUser(user);
         } catch (NoSuchElementException e) {
             JOptionPane.showMessageDialog(null, "User not found :(", "Error", JOptionPane.ERROR_MESSAGE);
             start(userSession);
         }
-
-        userSession.setUser(user);
-
     }
 }
